@@ -1,0 +1,5 @@
+if (typeof(hitua) != 'object') var hitua = new Object();
+hitua.site_id = 98055;
+hitua.host_count = 2516; hitua.hit_count = 9551; hitua.uid_count = 2523; hitua.online_count = 28;
+hitua.poll_sex = 0; hitua.poll_age = 0; hitua.favor_mask = 8589934592; hitua.country_id = 43; hitua.region_id = 0;
+if (hitua.draw) hitua.draw();

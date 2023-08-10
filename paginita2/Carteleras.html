@@ -1,0 +1,382 @@
+	<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	
+    <!--codigo alfa -->
+    
+    <link rel="stylesheet" href="css/demo1.css">
+    <script type="text/javascript" language="javascript" src="js/datos.js"></script>
+	 <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+	<!--<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>-->
+    <script src="Metro-UI-CSS-master/docs/js/jquery/jquery.dataTables.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+    
+    <!--codigo beta Metro  -->
+    <link href="Metro-UI-CSS-3.0.0-beta.1/docs/css/metro.css" rel="stylesheet">
+ 	<link href="Metro-UI-CSS-3.0.0-beta.1/docs/css/metro-icons.css" rel="stylesheet">
+    <link href="Metro-UI-CSS-3.0.0-beta.1/docs/css/docs.css" rel="stylesheet">
+    
+<script>
+ 	$(document).ready(function() {
+		$('#demo').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
+			$('#example').dataTable( {
+				"data": dataSet,
+				"columns": [
+					{ "title": "Cod Suc" },
+					{ "title": "Sucursal" },
+					{ "title": "IP" },
+					{ "title": "Nombre de Maquina", "class": "center" },
+					{ "title": "Descripcion", "class": "center" }
+					
+				]
+			} );   
+		} );
+	 
+	$(document).ready(function() {
+    var table = $('#example').DataTable();
+ 
+    $('#example tbody').on( 'click', 'tr', function () {
+		var name = $('td', this).eq(0).text();
+		var name1 = $('td', this).eq(1).text();
+		var name2 = $('td', this).eq(2).text();
+		var name3 = $('td', this).eq(3).text();
+		
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+         table.$('tr.selected').removeClass('selected');
+           $(this).addClass('selected');
+        }
+   			$('.button').click(function() {
+				
+				$("#ae").html(name)
+				$("#b").html(name1)
+				$("#c").html(name2)
+				$("#d").html(name3)
+				type = $(this).attr('data-type');
+				$('.overlay-container').fadeIn(function() {
+				window.setTimeout(function(){
+					$('.window-container.'+type).addClass('window-container-visible');
+				 }, 100);
+				});
+			});
+		$('.close').click(function() {
+				$('.overlay-container').fadeOut().end().find('.window-container').removeClass('window-container-visible');
+			});
+		});
+		} )
+		
+	</script>
+<style>
+#contenedores {
+	position:relative;
+	left:1%;
+	border: 1px solid #000;
+	width: 95%;
+	overflow: hidden;
+	padding: 20px 20px 20px 3px;*/
+	
+}
+
+#divrc{
+	position:relative;
+	overflow: visible;
+	left: 83.5%;
+}
+ 
+ 
+ .back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 0px;
+    text-decoration: none;
+    color:  #000000;
+    background-color: rgba(235, 235, 235, 0.80);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
+}
+
+#a{
+	position:relative;
+	top:20px;
+	left:7%;
+	width:85%;
+	height:100px;
+	background:#ccc;
+	 
+}
+ 
+body, html {
+	height: 100%;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 100;
+	text-align: center;
+	font-family: helvetica;
+      }
+       
+      .tabs input[type=radio] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      .tabs {
+	width: 90%;
+	float: none;
+	list-style: none;
+	position: relative;
+	padding: 0;
+	margin: 30px auto;
+      }
+      .tabs li{
+        float: left;
+		 
+      }
+      .tabs label {
+	display: block;
+	padding: 20px 24px;/*ancho del tab*/
+	border-radius: 1px 2px 0 0;
+	color: #333;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	/*background: rgba(255,255,255,0.2); */
+          cursor:pointer;
+	position: relative;
+	top: 8px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+      }
+      .tabs label:hover {
+        /*background: rgba(255,255,255,0.5);*/
+        top: 0;
+      }
+       
+      [id^=tab]:checked + label {
+         background: #08C;
+        color: white;
+        top: 0;
+      }
+       
+      [id^=tab]:checked ~ [id^=tab-content] {
+          display: block;
+      }
+      .tab-content{
+        /*z-index: 2;*/
+        display: none;
+        text-align: left;
+        width: 100%;
+        font-size: 12px;
+        line-height: 140%;
+        padding-top: 10px;
+        background: #FFF; /* fondo de cuadro de tabla */
+        padding: 15px;
+        /*color: white;*/
+        position: absolute;
+        top: 53px;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-animation-duration: 0.5s;
+        -o-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+      }
+
+
+
+#lugar{
+	position:relative;
+	top:20%;
+	left:20%;
+	width:36%;
+	background-color:#09F;
+ }
+
+
+#navegador ul{
+   list-style-type: none;
+   text-align: center;
+}
+
+#navegador li{
+   display: inline;
+   text-align: center;
+   margin: 0 10px 0 0;
+}
+#navegador li a {
+   padding: 2px 7px 2px 7px;
+   color: #666;
+   background-color: #eeeeee;
+   border: 1px solid #ccc;
+   text-decoration: none;
+}
+
+#navegador li a:hover{
+   background-color: #333333;
+   color: #ffffff;
+}
+
+#parra{
+	top:35%;
+}
+
+
+
+   </style>
+    
+    </head>
+    <body>
+    
+   
+     
+      
+      
+     <div> 
+           <img src="img/baner1.jpg" width="1346" height="119">
+     </div> 
+    			<div class="row">
+                    <div class="cell">
+                        <nav style="z-index: 1500; margin-bottom: 30px">
+                            <ul class="m-menu">
+                                <li><a href="#"><span class="mif-home"> Inicio </span></a></li>
+                                <li><a href="#">Caracteristicas</a></li>
+                                <li><a href="#">Noticias</a></li>
+                                <li><a href="#">La Comunidad</a></li>
+                                <li><a href="#">varios</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+    			</div>
+    </div>
+    
+    
+    
+    <div id="a" >
+    
+    <p id="parra">Informacion referente a Carteleras Digitales de Sucursales Banco<strong>al realizar la Busqueda  seleccione y haga click en comprobar </strong>
+    </p>
+    </div>
+    
+<ul class="tabs">
+        <li>
+          <input type="radio" checked name="tabs" id="tab1">
+          <label for="tab1">Carteleras Banco</label>
+          <div id="tab-content1" class="tab-content animated fadeIn">
+    <div  id="demo  ">
+       <div id="contenedores" > 
+   		 <div >
+         	<input  id="divrc" type="button" value="Comprobar Conexion" class="button" data-type="zoomin" />
+         </div>
+         <table id="example" class="display" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>Cod Suc</th>
+						<th>Sucursal</th>
+						<th>IP</th>
+						<th>Nombre de Equipo</th>
+						<th>Descripcion</th>
+						<th>  </th>
+					</tr>
+				</thead>
+    			<tfoot>
+                	<tr>
+    				</tr>
+            	</tfoot>
+    </table>
+    
+   
+    </div>
+	</div>
+
+    <div class="overlay-container ">
+		<div class="window-container zoomin">
+			<h3> Datos del La Cartelera</h3> 
+			
+            <br/>
+			<br/>
+            
+           <table border=1 cellspacing=0 cellpadding=2 bordercolor="666633"  align="left">
+                <tr>
+                    <td>Cod. Suc./Of. </td>
+                    <td><span id="ae"></span></td>
+                </tr>
+                <tr>
+                    <td>Nombre Suc./Of</td>
+                    <td><span id="b"></span> </td>
+                </tr>
+                <tr>
+                    <td> Ip Cartelera </td>
+                    <td><span id="c"></span> </td>
+                </tr>
+                <tr>
+                    <td>Nombre Equipo </td>
+                    <td><span id="d"></span> </td>
+                </tr>
+    		</table>
+			<br/>
+            
+			<br/>
+            
+            	
+                <div id="lugar">
+                	<?php
+                        $data = "<script> document.write(name2) </script>";
+                        exec ("ping {$data} ",$output);
+                        foreach ($output as $x){
+                                print_r($x . "<br>");
+                                }
+                  	?>
+              	</div>
+                
+                
+            <br/>
+			<br/>
+			<span class="close" style="text-align:center">Cerrar</span>
+		</div>
+	</div>
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab2">
+          <label for="tab2">Servidores Banco</label>
+          <div id="tab-content2" class="tab-content animated fadeIn">
+             ..Servidores de sucursales Banco..
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab3">
+          <label for="tab3">Listado Suc.Nacar y CTRL D</label>
+          <div id="tab-content3" class="tab-content animated fadeIn">
+            .Solo Lista de Sucursales y servidores nacar y CRTL D..
+          </div>
+        </li>
+        <li>
+          <input type="radio" name="tabs" id="tab4">
+          <label for="tab4">Generador de Claves </label>
+          <div id="tab-content4" class="tab-content animated fadeIn">
+            .Key Generator ..
+          </div>
+        </li>
+         <li>
+          <input type="radio" name="tabs" id="tab5">
+          <label for="tab5">Conexion a A/D</label>
+          <div id="tab-content5" class="tab-content animated fadeIn">
+            .Dominios Bancos ..
+          </div>
+        </li>
+        
+</ul>
+     
+    
+</body>
+   </html>

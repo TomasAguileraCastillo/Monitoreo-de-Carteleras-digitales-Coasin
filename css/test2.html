@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+  function loadPage(urlToLoad) {
+    $.ajax({
+        type: "POST",
+        url: urlToLoad,
+        data: dataString,
+        success: function (returnedData) {
+            $('#main').html(returnedData);
+        }
+    });
+}
+
+$(document).ready(function () {
+   $('nav a.nav').click(function(e){
+      e.preventDefault();
+      loadPage(this.href);
+   });
+});
+    </script>
+</head>
+<body>
+     <nav>
+   <ul>
+     <li>
+       <a href="load.php" class="nav">
+          <img src="news.png" alt="Latest news" width="81" height="61" class="navImage" />Latest news
+       </a>
+     </li>
+   </ul>
+ </nav>
+</body>
+</html>
